@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+	body {
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+
+		& * {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+	}
+
+	--primary: 51, 51, 51;
+	--secundary: 72, 229, 194;
+	--terciary: 252, 250, 249;
+
+	app-root {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+
+		& > * > * {
+			padding: 0 8em;
+		}
+	}
+
+	section {
+		padding: 2em 0;
+		background-color: rgb(var(--secundary));
+	}
+
+	main {
+		& h1,
+		h2,
+		h3,
+		h4 {
+			text-align: center;
+		}
+	}
+
+}

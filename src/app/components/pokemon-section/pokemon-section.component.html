@@ -1,0 +1,42 @@
+@if (pokemonlist) {
+<table>
+	<thead>
+		<tr>
+			<td>id</td>
+			<td>sprite</td>
+			<td>name</td>
+			<td>base_experience</td>
+			<td>height</td>
+			<td>weight</td>
+			<td>types</td>
+		</tr>
+	</thead>
+	<tbody>
+		@for (pokemon of pokemonlist; track $index) {
+		<tr>
+			<td>{{ pokemon.id }}</td>
+			<td><img [src]="pokemon.sprites.front_default" alt="" /></td>
+			<td>{{ pokemon.name }}</td>
+			<td>{{ pokemon.base_experience }}</td>
+			<td>{{ pokemon.height }}</td>
+			<td>{{ pokemon.weight }}</td>
+			<td colspan="2">
+				@for (value of pokemon.types; track $index) {
+				{{ value.type.name }}
+				}
+			</td>
+		</tr>
+		}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="7">
+				<div class="navigation-buttons">
+					<button [disabled]="prevPage == null ? true : false" (click)="goToPreviusPage(prevPage)"><-</button>
+					<button [disabled]="nextPage == null ? true : false" (click)="goToNextPage(nextPage)">-></button>
+				</div>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+}

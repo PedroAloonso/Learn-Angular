@@ -1,0 +1,74 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	padding: 2em !important;
+}
+
+table {
+	padding: 0 1em;
+	color: rgb(var(--secundary));
+
+	border-radius: 12px;
+	text-align: center;
+	background-color: rgb(var(--primary));
+
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	& > thead {
+		& > tr > td {
+			font-weight: bold;
+			padding: 20px;
+		}
+	}
+
+	& > tbody {
+        background-color: white;
+		& tr > td {
+			padding: 10px;
+		}
+		tr:nth-child(odd) {
+			td {
+				background-color: rgba(var(--primary), 0.9)
+			}
+		}
+
+		/* Linhas pares */
+		tr:nth-child(even) {
+			td {
+				background-color: rgba(var(--primary), 0.8)
+			}
+		}
+	}
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+
+    button {
+        padding: 0.5em 1em;
+        background-color: rgb(var(--primary));
+        color: white;
+        border: none;
+        border-radius: 8px;
+        border: 2px solid gray;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: large;
+        font-weight: bolder;
+
+        &:hover {
+            background-color: rgb(var(--secundary));
+        }
+
+        &:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    }
+}

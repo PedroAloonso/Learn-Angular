@@ -1,0 +1,56 @@
+@if (pokemonInfo$ ) {
+<main>
+	<section>
+		<h1>{{ (pokemonInfo$ | async)?.name }}</h1>
+
+		<div>
+			<div>
+				<img
+					[src]="(pokemonInfo$ | async)?.sprites.front_default"
+					alt=""
+				/>
+				<img
+					[src]="(pokemonInfo$ | async)?.sprites.back_default"
+					alt=""
+				/>
+			</div>
+			<div>
+				<img
+					[src]="(pokemonInfo$ | async)?.sprites.front_shiny"
+					alt=""
+				/>
+				<img
+					[src]="(pokemonInfo$ | async)?.sprites.back_shiny"
+					alt=""
+				/>
+			</div>
+		</div>
+		<div class="status">
+			<h2>Caracteristicas: </h2>
+			<div>
+				<div>
+                    <p>Altura: {{ (pokemonInfo$ | async)?.height }}</p>
+                    <p>Peso: {{ (pokemonInfo$ | async)?.weight }}</p>
+                    <p>
+                        É um inicial?: @if((pokemonInfo$ |
+                        async)?.is_default){Sim}@else {Não}
+                    </p>
+                    <p>
+                        Tipos: @for (item of (pokemonInfo$ | async)?.types; track
+                        $index) {
+                        {{ item.type.name }}@if ($index != ((pokemonInfo$ | async)?.types.length - 1)) {,}
+                        }
+                    </p>
+                </div>
+				<div>
+                    <ul>
+                        @for (item of (pokemonInfo$ | async)?.stats; track $index) {
+                        <li>{{ item.stat.name }}: {{ item.base_stat }}</li>
+                        }
+                    </ul>
+                </div>
+			</div>
+		</div>
+	</section>
+</main>
+}

@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+}
+
+footer {
+    font-weight: bold;
+    color: rgb(var(--terciary));
+    text-align: center;
+    padding: 1em;
+    background-color: rgb(var(--primary));
+}
