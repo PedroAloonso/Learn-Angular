@@ -1,4 +1,4 @@
-@if (pokemonlist) {
+@if (pokemonList()) {
 <table>
 	<thead>
 		<tr>
@@ -12,7 +12,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		@for (pokemon of pokemonlist; track $index) {
+		@for (pokemon of pokemonList(); track $index) {
 		<tr>
 			<td>{{ pokemon.id }}</td>
 			<td><img [src]="pokemon.sprites.front_default" alt="" /></td>
@@ -32,8 +32,25 @@
 		<tr>
 			<td colspan="7">
 				<div class="navigation-buttons">
-					<button [disabled]="prevPage == null ? true : false" (click)="goToPreviusPage(prevPage)"><-</button>
-					<button [disabled]="nextPage == null ? true : false" (click)="goToNextPage(nextPage)">-></button>
+					<button
+						[disabled]="prevPage == null ? true : false"
+						(click)="goToPreviusPage()"
+					>
+						<-
+					</button>
+					<div>
+						@if (currentPage() > 1) {
+							<span>[1] - ... - </span>
+						}
+						<span>[ {{ currentPage() }} ]</span>
+
+					</div>
+					<button
+						[disabled]="nextPage == null ? true : false"
+						(click)="goToNextPage()"
+					>
+						->
+					</button>
 				</div>
 			</td>
 		</tr>
