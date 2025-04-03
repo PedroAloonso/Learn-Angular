@@ -1,4 +1,4 @@
-import { Component, effect, OnInit, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { Pokemon } from '../../interfaces/pokemon';
 import { PokemonService } from '../../services/pokemon/pokemon.service';
 
@@ -22,7 +22,7 @@ export class PokemonSectionComponent {
 	}
 
 	private loadPokemonList(offset: number) {
-		this.pokemonService.getPokemonList(offset).subscribe((value) => {
+		this.pokemonService.getPokemonTableList(offset).subscribe((value) => {
 			this.pokemonList.set(value.results);
 			this.prevPage.set(value.prev_offset);
 			this.nextPage.set(value.next_offset);

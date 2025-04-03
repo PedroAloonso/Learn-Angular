@@ -23,7 +23,7 @@ export class PokemonService {
 		return this.http.get<Pokemon>(`${this.pokemonUrl}/${name}`);
 	}
 
-	getPokemonPreviews(url: string): Observable<PokemonPreview> {
+	getPokemonPreview(url: string): Observable<PokemonPreview> {
 		return this.http.get<Pokemon>(url).pipe(
 			map((pokemon) => ({
 				name: pokemon.name,
@@ -33,14 +33,16 @@ export class PokemonService {
 		);
 	}
 
-	getPokemonList(offset: number = 0): Observable<any> {
+	getPokemonTableList(offset: number = 0): Observable<PokemonListResults> {
 		let rawList = this.http
 			.get<PokemonList>(`${this.pokemonUrl}/?offset=${offset}&limit=5`)
 			.pipe(
 				map((pokemonList) => ({
 					next_offset: pokemonList.next
 						? Number(
-								pokemonList.next.split('offset=')[1].split('&')[0]
+								pokemonList.next
+									.split('offset=')[1]
+									.split('&')[0]
 						  )
 						: null,
 					prev_offset: pokemonList.previous
@@ -53,7 +55,7 @@ export class PokemonService {
 					results: pokemonList.results,
 				}))
 			);
-		
+
 		return rawList.pipe(
 			switchMap((result) =>
 				forkJoin(
@@ -77,7 +79,7 @@ export class PokemonService {
 			.pipe(
 				map((pokemonList) =>
 					pokemonList.results.map((pokemonInfo) =>
-						this.getPokemonPreviews(pokemonInfo.url)
+						this.getPokemonPreview(pokemonInfo.url)
 					)
 				),
 				switchMap((previews) => forkJoin(previews))

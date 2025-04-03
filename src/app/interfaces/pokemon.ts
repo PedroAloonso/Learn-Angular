@@ -52,7 +52,7 @@ export interface PokemonList {
 export interface PokemonListResults {
 	next_offset: number | null;
 	prev_offset: number | null;
-	results: NamedAPIResource[];
+	results: Pokemon[];
 }
 
 export interface PokeballList {
