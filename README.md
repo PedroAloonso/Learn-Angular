@@ -1,27 +1,16 @@
-# LearnApp
+# Aprendendo Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+Este repositório foi criado para documentar e praticar minha jornada de aprendizado com Angular.
+Aqui você encontrará exemplos, exercícios e anotações enquanto exploro conceitos-chave como componentes, serviços, roteamento, data binding, injeção de dependência, entre outros.
+Ideal para quem deseja acompanhar ou revisar os fundamentos do desenvolvimento com Angular.
 
-## Development server
+[Demonstração](https://learn-angular-three-eta.vercel.app/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Learning Angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This repository was created to document and practice my learning journey with Angular.
+Here you will find examples, exercises, and notes as I explore key concepts such as components, services, routing, data binding, dependency injection, and more.
+Ideal for anyone who wants to follow along or review the basics of Angular development.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[Demo](https://learn-angular-three-eta.vercel.app/)

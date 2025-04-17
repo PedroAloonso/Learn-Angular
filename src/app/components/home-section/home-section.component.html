@@ -1,14 +1,5 @@
 <main>
 	<section>
-		<div class="about-container">
-			<h1>Sobre</h1>
-			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
-				quia aliquid aspernatur dignissimos consequatur. Atque,
-				distinctio. Repellat nam numquam maiores, deleniti temporibus,
-				totam explicabo placeat minima dolorum suscipit, iste possimus!
-			</p>
-		</div>
 
 		<div class="external-slider-container">
 			<div class="slider-container">
@@ -16,7 +7,7 @@
 				<div class="slider x">
 					@for (pokemon of pokemonsList$ | async; track $index) {
 					<div class="preview-container" [routerLink]="['/pokemon', pokemon?.name]">
-						<img [src]="pokemon.sprite.front_default" alt="" />
+						<img [src]="pokemon.sprite.front_default" alt="" class="pokemons" />
 						<h4>{{ pokemon.name }}</h4>
 						@for (types of pokemon.type; track $index) { 
 						<span>{{ types.type.name }}</span>
@@ -30,7 +21,7 @@
 				<div class="slider y">
 					@for (pokeball of pokeballsList$ | async; track $index) {
 					<div class="preview-container">
-						<img [src]="pokeball.sprite" alt="" />
+						<img [src]="pokeball.sprite" alt="" class="pokeballs" />
 						<h4>{{ pokeball.name }}</h4>
 					</div>
 					}
