@@ -12,12 +12,5 @@ import { HeaderComponent } from './components/header/header.component';
 	styleUrl: './app.component.scss',
 })
 export class AppComponent {
-	// onChange(event: Event) {
-	// 	const inputElement = event.target as HTMLInputElement;
-	// 	console.log(inputElement.value);
-	// 	this.name = inputElement.value;
-	// }
-	print(something: any) {
-		console.log(something);
-	}
+
 }
